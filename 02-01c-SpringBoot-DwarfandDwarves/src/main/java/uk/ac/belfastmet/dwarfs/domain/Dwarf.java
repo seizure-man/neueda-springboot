@@ -13,10 +13,7 @@ public class Dwarf {
 		this.image = image;
 	}
 	
-	public Dwarf()
-	{
-		
-	}
+
 	public String getName() {
 		return name;
 	}

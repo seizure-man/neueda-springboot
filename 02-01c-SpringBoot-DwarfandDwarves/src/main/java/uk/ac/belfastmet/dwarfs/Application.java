@@ -21,7 +21,7 @@ public class Application {
 	@PostConstruct
 	public void createDwarfs()
 	{
-		ArrayList<Dwarf> dwarfs = new ArrayList<Dwarf>();
+		
 		//TODO have dwarf names in a list
 		//loop through list
 		// call constructor once for every name in list 
@@ -31,6 +31,8 @@ public class Application {
 		
 		//Map<String, String> dictionary = new HashMap<String, String>();
 		//dictionary.put("Disney", "Sleepy");
+		
+		ArrayList<Dwarf> dwarfs = new ArrayList<Dwarf>();
 		
 		Dwarf sleepy = new Dwarf("Sleepy", "Disney", "sleepy.png");
 		Dwarf dopey = new Dwarf("Dopey", "Disney", "dopey.png");
