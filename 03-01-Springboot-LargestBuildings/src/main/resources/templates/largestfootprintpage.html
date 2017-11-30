@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
-<title th:text="${pageTitle}">Volume</title>
+<title th:text="${pageTitle}">Floor Area</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet"
@@ -15,7 +15,7 @@
 
 	<nav th:replace="layouts/nav:: navFragment"></nav>
 	<div class="container">
-		<h2>Largest Volume</h2>
+		<h2>Largest Footprint</h2>
 		<table class="table table-condensed">
 			<thead>
 				<tr>
@@ -23,23 +23,24 @@
 					<th>Name</th>
 					<th>Country</th>
 					<th>Place</th>
-					<th>Volume</th>
+					<th>Footprint</th>
 					<th>Image</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="lv : ${volumebuildings}">
+				<tr th:each="lfp : ${footprintbuildings}">
 
-					<td th:text="${lv.rank}">New Cent Glob</td>
-					<td th:text="${lv.name}">New Cent Glob</td>
-					<td th:text="${lv.country}">New Cent Glob</td>
-					<td th:text="${lv.place}">New Cent Glob</td>
-					<td th:text="${lv.volume}">New Cent Glob</td>
-					<td><img src="../static/lv1.jpg" th:src="@{/} + ${lv.image}"
+					<td th:text="${lfp.rank}">New Cent Glob</td>
+					<td th:text="${lfp.name}">New Cent Glob</td>
+					<td th:text="${lfp.country}">New Cent Glob</td>
+					<td th:text="${lfp.place}">New Cent Glob</td>
+					<td th:text="${lfp.footprint}">New Cent Glob</td>
+					<td><img src="../static/lfp1.jpg" th:src="@{/} + ${lfp.image}"
 						 height="150" /></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+
 </body>
 </html>
