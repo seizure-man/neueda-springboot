@@ -1,0 +1,38 @@
+<html>
+<head>
+<title th:text="${pageTitle}">Largest Buildings Homepage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<nav th:replace="layouts/nav:: navFragment"></nav>
+
+	<div class="jumbotron text-center">
+		<h1>Largest Buildings Home Page</h1>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<h3>Largest Floor Area</h3>
+			<a href="http://localhost:8080/floorarea/" class="btn btn-info"
+				role="button">Floor Area</a>
+
+			<h3>Largest Footprint</h3>
+			<a href="http://localhost:8080/footprint/" class="btn btn-info"
+				role="button">Footprint</a>
+
+			<h3>Largest Volume</h3>
+			<a href="http://localhost:8080/volume/" class="btn btn-info"
+				role="button">Volume</a>
+
+		</div>
+	</div>
+	<footer th:replace="layouts/footer ::footerFragment"> </footer>
+</body>
+</html>

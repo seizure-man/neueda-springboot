@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+<title th:text="${pageTitle}">Floor Area</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<nav th:replace="layouts/nav:: navFragment"></nav>
+	<div class="container">
+		<h2>Largest Floor Area</h2>
+		<table class="table table-condensed">
+			<thead>
+				<tr>
+					<th>Rank</th>
+					<th>Name</th>
+					<th>Country</th>
+					<th>Place</th>
+					<th>Floor Area</th>
+					<th>Image</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="lfa : ${floorareabuildings}">
+
+					<td th:text="${lfa.rank}">New Cent Glob</td>
+					<td th:text="${lfa.name}">New Cent Glob</td>
+					<td th:text="${lfa.country}">New Cent Glob</td>
+					<td th:text="${lfa.place}">New Cent Glob</td>
+					<td th:text="${lfa.floorarea}">New Cent Glob</td>
+					<td><img src="../static/lfa1.jpg" th:src="@{/} + ${lfa.image}"
+						 height="150" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

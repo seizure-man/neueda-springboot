@@ -14,7 +14,6 @@ public class DwarfService {
 	
 	public DwarfService() {
 		super();
-
 	}
 
 	public ArrayList<Dwarf> getDisneyDwarfs()

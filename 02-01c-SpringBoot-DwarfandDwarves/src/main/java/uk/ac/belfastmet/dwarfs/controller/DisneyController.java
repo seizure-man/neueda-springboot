@@ -28,8 +28,5 @@ public class DisneyController {
 		model.addAttribute("dwarfs",this.dwarfService.getDisneyDwarfs());
 		return "disneyPage";
 	}
-	
-
-
 
 }
