@@ -1,4 +1,4 @@
-package uk.ac.belfastmet.largestbuildings.controller;
+/*package uk.ac.belfastmet.largestbuildings.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,5 +23,8 @@ public class FloorAreaController {
 		model.addAttribute("floorareabuildings",this.largefloorareaservice.getFloorArea());
 		return "largestfloorareapage";
 	}
+	
+	
 
 }
+*/
