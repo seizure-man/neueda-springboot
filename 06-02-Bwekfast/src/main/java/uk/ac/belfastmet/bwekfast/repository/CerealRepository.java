@@ -5,5 +5,6 @@ import uk.ac.belfastmet.bwekfast.domain.Cereal;
 
 public interface CerealRepository extends CrudRepository<Cereal, Integer> {
 	
+	
 
 }

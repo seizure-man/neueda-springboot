@@ -13,8 +13,7 @@
 </head>
 <body>
 
-<nav th:replace="layouts/nav:: navFragment">
-</nav>
+	<nav th:replace="layouts/nav:: navFragment"></nav>
 	<div class="container">
 		<h2>Cereals Table</h2>
 		<table class="table table-condensed">
@@ -23,6 +22,7 @@
 					<th>Cereal ID</th>
 					<th>Manufacturer</th>
 					<th>Name</th>
+					<!-- 
 					<th>Energy</th>
 					<th>Calories</th>
 					<th>Protein</th>
@@ -33,13 +33,20 @@
 					<th>Fibre</th>
 					<th>Sodium</th>
 					<th>Salt</th>
-					<th>Iron</th>
+					<th>Iron</th>-->
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="cereal : ${cereals}">
 					<td th:text="${cereal.cerealid}"></td>
 					<td th:text="${cereal.manufacturer}"></td>
+					<td th:text="${cereal.name}"></td>
+					<td><a href="#" th:href="@{/cereals/view/} + ${cereal.cerealid}">View</a>
+						<a href="#" th:href="@{/cereals/edit/} + ${cereal.cerealid}">Edit</a>
+						<a href="#" th:href="@{/cereals/delete/} + ${cereal.cerealid}">Delete</a>
+					</td>
+
+					<!--  
 					<td th:text="${cereal.name}"></td>
 					<td th:text="${cereal.energy}"></td>
 					<td th:text="${cereal.calories}"></td>
@@ -51,10 +58,11 @@
 					<td th:text="${cereal.fibre}"></td>
 					<td th:text="${cereal.sodium}"></td>
 					<td th:text="${cereal.salt}"></td>	
-					<td th:text="${cereal.iron}"></td>
+					<td th:text="${cereal.iron}"></td> -->
 				</tr>
 			</tbody>
 		</table>
+		<a class="btn btn-primary" href="/cereals/add" role="button">Add New</a>
 	</div>
 </body>
 </html>

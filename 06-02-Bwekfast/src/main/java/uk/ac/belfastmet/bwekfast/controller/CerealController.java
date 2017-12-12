@@ -35,5 +35,7 @@ public class CerealController {
 		model.addAttribute("cereals",cerealRepository.findAll());
 		return "cerealpage";
 	}
+	
+	
 
 }
