@@ -1,7 +1,5 @@
 package uk.ac.belfastmet.dwarfs.service;
 
-import java.util.ArrayList;
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;

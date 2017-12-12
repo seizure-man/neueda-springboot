@@ -7,6 +7,12 @@ import javax.persistence.Id;
 @Entity
 public class Dwarf {
 	
+	
+	
+	public Dwarf() {
+		super();
+	}
+
 	@Id
 	@GeneratedValue
 	private Integer dwarfId;
