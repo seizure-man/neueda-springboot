@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import uk.ac.belfastmet.bwekfast.domain.Cereal;
 import uk.ac.belfastmet.bwekfast.repository.CerealRepository;
@@ -50,10 +51,11 @@ public class HomePageController {
 
 	
 	@GetMapping("/cereals/delete/{cerealid}")
-	public String deleteCereal(@PathVariable("cerealid") Integer cerealid)
+	public String deleteCereal(@PathVariable("cerealid") Integer cerealid, RedirectAttributes redirectAttrs)
 	{
 		cerealRepository.delete(cerealid);
-		return "redirect:/";
+		redirectAttrs.addFlashAttribute("message", "Cereal was deleted");
+		return "redirect:/cereals/";
 	}
 	
 	

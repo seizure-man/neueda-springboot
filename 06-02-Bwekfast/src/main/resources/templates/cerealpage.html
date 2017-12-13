@@ -16,6 +16,15 @@
 	<nav th:replace="layouts/nav:: navFragment"></nav>
 	<div class="container">
 		<h2>Cereals Table</h2>
+
+
+		</div>
+		
+				<div class="container">
+			<div class="alert alert-success" role="alert" th:if="${message}">
+			<p th:text="${message}"></p>
+			</div>
+
 		<table class="table table-condensed">
 			<thead>
 				<tr>
@@ -41,8 +50,9 @@
 					<td th:text="${cereal.cerealid}"></td>
 					<td th:text="${cereal.manufacturer}"></td>
 					<td th:text="${cereal.name}"></td>
-					<td><a href="#" th:href="@{/cereals/view/} + ${cereal.cerealid}">View</a>
-						<a href="#" th:href="@{/cereals/edit/} + ${cereal.cerealid}">Edit</a>
+					<td><a href="#"
+						th:href="@{/cereals/view/} + ${cereal.cerealid}">View</a> <a
+						href="#" th:href="@{/cereals/edit/} + ${cereal.cerealid}">Edit</a>
 						<a href="#" th:href="@{/cereals/delete/} + ${cereal.cerealid}">Delete</a>
 					</td>
 
@@ -62,7 +72,8 @@
 				</tr>
 			</tbody>
 		</table>
-		<a class="btn btn-primary" href="/cereals/add" role="button">Add New</a>
+		<a class="btn btn-primary" href="/cereals/add" role="button">Add
+			New</a>
 	</div>
 </body>
 </html>
