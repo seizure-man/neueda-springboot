@@ -69,4 +69,12 @@ public class PassengersController {
 		return "redirect:/passengers/";
 	}
 	
+	@GetMapping("/add")
+	public String createPassenger(Model model) {
+
+		model.addAttribute("pageTitle", "Add Passenger");
+		model.addAttribute("passenger", new Passenger());
+		return "editPassenger";
+	}
+	
 }
