@@ -13,8 +13,7 @@
 </head>
 <body>
 
-<nav th:replace="layouts/nav:: navFragment">
-</nav>
+	<nav th:replace="layouts/nav:: navFragment"></nav>
 	<div class="container">
 		<h2>All Passengers Table</h2>
 		<table class="table table-condensed">
@@ -47,7 +46,14 @@
 					<td th:text="${passenger.ticket}"></td>
 					<td th:text="${passenger.fare}"></td>
 					<td th:text="${passenger.cabin}"></td>
-					<td th:text="${passenger.embarked}"></td>	
+					<td th:text="${passenger.embarked}"></td>
+					<td><a href="#"
+						th:href="@{/passengers/view/} + ${passenger.passengerId}">View</a>
+						<a href="#"
+						th:href="@{/passengers/edit/} + ${passenger.passengerId}">Edit</a>
+						<a href="#"
+						th:href="@{/passengers/delete/} + ${passenger.passengerId}">Delete</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>

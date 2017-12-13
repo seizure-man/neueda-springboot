@@ -14,7 +14,6 @@ public class Passenger {
 	}
 
 	@Id
-	@GeneratedValue
 	private Integer passengerId;
 	private Integer survived;
 	private Integer pclass;
