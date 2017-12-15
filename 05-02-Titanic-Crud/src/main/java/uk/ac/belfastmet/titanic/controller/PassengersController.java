@@ -1,7 +1,5 @@
 package uk.ac.belfastmet.titanic.controller;
 
-
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import uk.ac.belfastmet.titanic.domain.Passenger;
@@ -21,26 +20,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @RequestMapping("/passengers/")
 public class PassengersController {
-	
 
 	@Autowired
 	PassengersRepository passengersRepository;
-	
 
 	public PassengersController(PassengersRepository passengersRepository) {
 		super();
 		this.passengersRepository = passengersRepository;
 	}
 
-
-
 	@GetMapping("/")
-	public String disney(Model model) 
-	{
-		model.addAttribute("passengers",passengersRepository.findAll());
+	public String disney(Model model) {
+		model.addAttribute("passengers", passengersRepository.findAll());
 		return "passengerpage";
 	}
-	
+
 	@GetMapping("/view/{passengerId}")
 	public String viewPassenger(@PathVariable("passengerId") Integer passengerId, Model model) {
 
@@ -61,14 +55,14 @@ public class PassengersController {
 		}
 
 	}
+
 	@GetMapping("/delete/{passengerId}")
-	public String deletePassenger(@PathVariable("passengerId") Integer passengerId, RedirectAttributes redirectAttrs)
-	{
+	public String deletePassenger(@PathVariable("passengerId") Integer passengerId, RedirectAttributes redirectAttrs) {
 		passengersRepository.delete(passengerId);
 		redirectAttrs.addFlashAttribute("message", "Passenger was deleted");
 		return "redirect:/passengers/";
 	}
-	
+
 	@GetMapping("/add")
 	public String createPassenger(Model model) {
 
@@ -76,5 +70,27 @@ public class PassengersController {
 		model.addAttribute("passenger", new Passenger());
 		return "editPassenger";
 	}
-	
+
+	@PostMapping("/search")
+	public String search(@RequestParam("searchField") String searchField
+			,@RequestParam("searchString") String searchString, Model model) {
+		
+		if (searchField.equals("name")){
+			
+			model.addAttribute("pageTitle","Search Passengers");
+			model.addAttribute("passenger", passengersRepository.findByName(searchString));
+			
+		}else if(searchField.equals("embarked")) {
+			
+			model.addAttribute("pageTitle","Search Passengers");
+			model.addAttribute("passenger", passengersRepository.findByEmbarked(searchString));
+			
+		}else if(searchField.equals("pclass")) {
+			Integer pClass = Integer.parseInt(searchString);
+			model.addAttribute("pageTitle","Search Passengers");
+			model.addAttribute("passenger", passengersRepository.findByPclass(pClass));
+		}
+		
+		return "passengerPage";
+	}
 }
